@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "12.1.4",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "xrpl": "^2.2.1",
+    "@dfinity/agent": "^0.10.1",
+    "@dfinity/identity": "^0.10.1",
+    "@dfinity/principal": "^0.10.4",
+    "install": "^0.13.0",
+    "isomorphic-fetch": "^3.0.0",
+    "node-fetch": "^3.2.5",
+    "sha256": "^0.2.0"
+  },
+  "devDependencies": {
+    "eslint": "8.12.0",
+    "eslint-config-next": "12.1.4"
+  }
+}

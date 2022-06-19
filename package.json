@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "npm dev",
-    "build": "npm run build",
+    "build": "npm build",
     "start": "npm start",
     "lint": "npm lint"
   },

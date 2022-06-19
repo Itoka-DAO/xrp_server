@@ -1,10 +1,10 @@
 {
   "private": true,
   "scripts": {
-    "dev": "npm dev",
-    "build": "ls",
-    "start": "npm start",
-    "lint": "npm lint"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "12.1.4",

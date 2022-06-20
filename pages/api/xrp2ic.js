@@ -105,7 +105,20 @@ let getNFTokenIDs = (nfts) => {
 };
 
 let getNFTokenID_burntx = (tx) => {
+  let bool = tx.result.meta.AffectedNodes.find((item) => {
+    return item["DeletedNode"];
+  });
+  // console.log("bool", bool);
+  let temp = bool?.DeletedNode?.FinalFields?.NFTokens?.[0]?.NFToken?.NFTokenID;
+  // console.log("bool?.DeletedNode?.FinalFields", bool.DeletedNode.FinalFields);
+  // console.log("temp", temp);
+  if (temp) {
+    return temp;
+  }
+
+  // console.log("tx.result.meta.AffectedNodes", tx.result.meta.AffectedNodes);
   let meta_serialized = tx.result.meta.AffectedNodes.map((item) => {
+    // console.log("item.ModifiedNode", item.ModifiedNode);
     return [
       item.ModifiedNode.LedgerEntryType,
       {

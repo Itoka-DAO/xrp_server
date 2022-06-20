@@ -82,7 +82,18 @@ let getIsOnIC = async (TokenIndex) => {
 };
 
 let getNFTokenID_mint = (tx) => {
+  let bool = tx.result.meta.AffectedNodes.find((item) => {
+    return item["CreatedNode"];
+  });
+  // console.log("bool", bool);
+  let temp = bool?.CreatedNode?.NewFields?.NFTokens?.[0]?.NFToken?.NFTokenID;
+  // console.log("temp", temp);
+  if (temp) {
+    return temp;
+  }
+  // console.log("tx.result.meta.AffectedNodes", tx.result.meta.AffectedNodes);
   let meta_serialized = tx.result.meta.AffectedNodes.map((item) => {
+    // console.log("item", item);
     return [
       item.ModifiedNode.LedgerEntryType,
       {
@@ -111,6 +122,24 @@ let getNFTokenID_mint = (tx) => {
 };
 
 export default async function handler(req, res) {
+  res.setHeader("Access-Control-Allow-Credentials", true);
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  // another common pattern
+  // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+  );
+
+  if (req.method === "OPTIONS") {
+    res.status(200).end();
+    return;
+  }
+
   const userPrincipal = req.body.principal;
   const userXrpPublicKey = req.body.xrpPublicKey;
   const userXrpPrivateKey = req.body.xrpPrivateKey;
@@ -182,6 +211,7 @@ export default async function handler(req, res) {
           // 5. Bound the NFTokenID with TokenIndex, submit to bridge ledger
           ic2xrp(TokenIndex, NFTokenID, userPrincipal, userXrpPublicKey).then(
             async (canisterRes_ic2xrp) => {
+              console.log("canisterRes_ic2xrp", canisterRes_ic2xrp);
               if (typeof canisterRes_ic2xrp["ok"] == "undefined") {
                 res.status(400).json({ res: "Ledger updated failed: ic2xrp" });
                 return;

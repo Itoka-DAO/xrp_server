@@ -1,4 +1,4 @@
-# A severless XRP issuer with its own IC identity to handle XRP mining and burning operations.
+# པ་ཀྲ་ཧེ་། Bazahei severless XRP issuer with its own IC identity to handle XRP mining and burning operations
 #### Building for Dfinity Supernova Hackthon in 2022
 
 <p align="center">

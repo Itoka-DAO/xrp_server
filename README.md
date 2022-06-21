@@ -1,5 +1,5 @@
-# XRP Server
-#### A severless XRP issuer with its own IC identity to handle XRP mining and burning operations.
+# A severless XRP issuer with its own IC identity to handle XRP mining and burning operations.
+#### Building for Dfinity Supernova Hackthon in 2022
 
 <p align="center">
   <img src="https://github.com/Itoka-DAO/IC-XRP/blob/main/Bazahei_cover.png">

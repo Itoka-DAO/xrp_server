@@ -19,3 +19,4 @@ Invite the talent hackers to join [Itoka discord](https://discord.gg/7BqSGMCE5c)
 
 LFG and པ་ཀྲ་ཧེ་།! :rocket: 
 
+***Note that the serverless production will be depressed once XRPL NFT-Devnet merged to main net and Dfinity upgrade the “HTTP request from canister” and “threshold ECDSA sign”***

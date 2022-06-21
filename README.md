@@ -2,7 +2,9 @@
 #### A severless XRP issuer with its own IC identity to handle XRP mining and burning operations.
 
 <p align="center">
-  <img width="460" height="300" src="https://github.com/Itoka-DAO/IC-XRP/blob/main/Bazahei_cover.png">
+  <img src="https://github.com/Itoka-DAO/IC-XRP/blob/main/Bazahei_cover.png">
+  <img src="https://github.com/Itoka-DAO/xrp_server/blob/main/DFINITY%20logo%20-%20dark.png">
+  <img src="https://github.com/Itoka-DAO/xrp_server/blob/main/xrpl.png">
 </p>
 
 
